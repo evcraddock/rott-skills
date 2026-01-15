@@ -1,0 +1,17 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "rott-skills",
+  "description": "Link and note management skills for Claude Code",
+  "owner": {
+    "name": "Erik Craddock",
+    "email": "erik@craddock.org"
+  },
+  "plugins": [
+    {
+      "name": "rott",
+      "source": "./",
+      "description": "rott skills for managing links and notes",
+      "category": "productivity"
+    }
+  ]
+}
