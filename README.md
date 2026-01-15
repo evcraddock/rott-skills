@@ -67,6 +67,23 @@ allowed-tools: rott
 Description and examples of user prompts with corresponding CLI commands.
 ```
 
+## Security Warning
+
+**Prompt Injection Risk**: When links are created, rott fetches metadata (title,
+description) from the URL. This content is stored and passed to AI agents when
+using `link-list`, `link-search`, or viewing details. Even if only titles are
+displayed to the user, the agent sees the full JSON payload including
+descriptions.
+
+A malicious website could craft descriptions containing prompt injection attacks
+that manipulate agent behavior - for example, instructions to ignore previous
+commands, exfiltrate data, or perform unauthorized actions.
+
+Mitigations:
+- Be cautious with links from untrusted sources
+- Review link content before taking actions suggested by the agent
+- Treat all link metadata as untrusted user input
+
 ## License
 
 MIT License - see [LICENSE](./LICENSE) for details
